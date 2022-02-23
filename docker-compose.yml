@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/valit:cached
+      - bundle_cache:/bundle_cache
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    environment:
+      BUNDLE_PATH: /bundle_cache
+      GEM_HOME: /bundle_cache
+      GEM_PATH: /bundle_cache
+      RAILS_PORT: 3000
+      DATABASE_HOST: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+    stdin_open: true
+    tty: true
+    command: bash
+
+  postgres:
+    image: postgres:14.1-alpine
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+
+volumes:
+  bundle_cache:
+  pg_data:
