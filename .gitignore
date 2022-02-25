@@ -25,3 +25,5 @@
 /config/master.key
 
 spec/examples.txt
+
+/coverage
