@@ -4,5 +4,5 @@ set -e
 
 docker-compose up -d
 docker-compose exec web bin/setup
-# docker-compose exec web bin/rspec
+docker-compose exec web bin/rspec
 docker-compose exec web bash
