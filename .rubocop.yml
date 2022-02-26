@@ -1,0 +1,16 @@
+require:
+  - rubocop-rails
+  - rubocop-i18n
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-thread_safety
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

@@ -4,9 +4,9 @@ require "spec_helper"
 
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort(_("The Rails environment is running in production mode!")) if Rails.env.production?
 
-require "support/simplecov.rb"
+require "support/simplecov"
 require "rspec/rails"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
