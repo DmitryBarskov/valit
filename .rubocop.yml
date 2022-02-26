@@ -9,6 +9,10 @@ require:
 AllCops:
   NewCops: enable
 
+I18n/RailsI18n/DecorateString:
+  Exclude:
+    - spec/**/*.rb
+
 Style/Documentation:
   Enabled: false
 
