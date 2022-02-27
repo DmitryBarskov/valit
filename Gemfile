@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 ruby "3.1.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -73,4 +72,7 @@ group :development, :test do
   gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-thread_safety", require: false
+
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
 end
