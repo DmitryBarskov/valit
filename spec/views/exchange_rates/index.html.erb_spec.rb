@@ -1,19 +1,21 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "exchange_rates/index", type: :view do
-  before(:each) do
+  before do
     assign(:exchange_rates, [
-      ExchangeRate.create!(
-        from_currency: "SDN",
-        to_currency: "AYN",
-        amount: 2.5
-      ),
-      ExchangeRate.create!(
-        from_currency: "AYN",
-        to_currency: "SDN",
-        amount: 0.4
-      )
-    ])
+             ExchangeRate.create!(
+               from_currency: "SDN",
+               to_currency: "AYN",
+               amount: 2.5
+             ),
+             ExchangeRate.create!(
+               from_currency: "AYN",
+               to_currency: "SDN",
+               amount: 0.4
+             )
+           ])
   end
 
   xit "renders a list of exchange_rates" do
